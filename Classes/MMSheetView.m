@@ -52,7 +52,7 @@
             self.titleView = [UIView new];
             [self addSubview:self.titleView];
             [self.titleView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.right.top.equalTo(self);
+                make.leading.trailing.top.equalTo(self);
             }];
             self.titleView.backgroundColor = config.backgroundColor;
             
@@ -73,7 +73,7 @@
         self.buttonView = [UIView new];
         [self addSubview:self.buttonView];
         [self.buttonView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self);
+            make.leading.trailing.equalTo(self);
             make.top.equalTo(lastAttribute);
         }];
         
@@ -89,7 +89,7 @@
             
             [btn mas_makeConstraints:^(MASConstraintMaker *make) {
                 
-                make.left.right.equalTo(self.buttonView).insets(UIEdgeInsetsMake(0, -MM_SPLIT_WIDTH, 0, -MM_SPLIT_WIDTH));
+                make.leading.trailing.equalTo(self.buttonView).insets(UIEdgeInsetsMake(0, -MM_SPLIT_WIDTH, 0, -MM_SPLIT_WIDTH));
                 make.height.mas_equalTo(config.buttonHeight);
                 
                 if ( !firstButton )
@@ -122,7 +122,7 @@
         self.cancelButton = [UIButton mm_buttonWithTarget:self action:@selector(actionCancel)];
         [self addSubview:self.cancelButton];
         [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.buttonView);
+            make.leading.trailing.equalTo(self.buttonView);
             make.height.mas_equalTo(config.buttonHeight);
             make.top.equalTo(self.buttonView.mas_bottom).offset(8);
         }];

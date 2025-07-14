@@ -359,7 +359,7 @@ static const void *mm_dimBackgroundBlurEffectStyleKey = &mm_dimBackgroundBlurEff
     UIView *v0 = spaces[0];
     
     [v0 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left);
+        make.leading.equalTo(self.mas_left);
         make.centerY.equalTo(((UIView*)views[0]).mas_centerY);
     }];
     
@@ -370,11 +370,11 @@ static const void *mm_dimBackgroundBlurEffectStyleKey = &mm_dimBackgroundBlurEff
         UIView *space = spaces[i+1];
         
         [obj mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(lastSpace.mas_right);
+            make.leading.equalTo(lastSpace.mas_right);
         }];
         
         [space mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(obj.mas_right);
+            make.leading.equalTo(obj.mas_right);
             make.centerY.equalTo(obj.mas_centerY);
             make.width.equalTo(v0);
         }];
@@ -383,7 +383,7 @@ static const void *mm_dimBackgroundBlurEffectStyleKey = &mm_dimBackgroundBlurEff
     }
     
     [lastSpace mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.mas_right);
+        make.trailing.equalTo(self.mas_right);
     }];
     
 }

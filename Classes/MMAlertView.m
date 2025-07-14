@@ -99,7 +99,7 @@
             [self addSubview:self.titleLabel];
             [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(lastAttribute).offset(config.innerMargin);
-                make.left.right.equalTo(self).insets(UIEdgeInsetsMake(0, config.innerMargin, 0, config.innerMargin));
+                make.leading.trailing.equalTo(self).insets(UIEdgeInsetsMake(0, config.innerMargin, 0, config.innerMargin));
             }];
             self.titleLabel.textColor = config.titleColor;
             self.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -117,7 +117,7 @@
             [self addSubview:self.detailLabel];
             [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(lastAttribute).offset(5);
-                make.left.right.equalTo(self).insets(UIEdgeInsetsMake(0, config.innerMargin, 0, config.innerMargin));
+                make.leading.trailing.equalTo(self).insets(UIEdgeInsetsMake(0, config.innerMargin, 0, config.innerMargin));
             }];
             self.detailLabel.textColor = config.detailColor;
             self.detailLabel.textAlignment = NSTextAlignmentCenter;
@@ -135,7 +135,7 @@
             [self addSubview:self.inputView];
             [self.inputView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(lastAttribute).offset(10);
-                make.left.right.equalTo(self).insets(UIEdgeInsetsMake(0, config.innerMargin, 0, config.innerMargin));
+                make.leading.trailing.equalTo(self).insets(UIEdgeInsetsMake(0, config.innerMargin, 0, config.innerMargin));
                 make.height.mas_equalTo(40);
             }];
             self.inputView.backgroundColor = self.backgroundColor;
@@ -153,7 +153,7 @@
         [self addSubview:self.buttonView];
         [self.buttonView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(lastAttribute).offset(config.innerMargin);
-            make.left.right.equalTo(self);
+            make.leading.trailing.equalTo(self);
         }];
         
         __block UIButton *firstButton = nil;
@@ -176,17 +176,17 @@
                     if ( !firstButton )
                     {
                         firstButton = btn;
-                        make.left.equalTo(self.buttonView.mas_left).offset(-MM_SPLIT_WIDTH);
+                        make.leading.equalTo(self.buttonView.mas_left).offset(-MM_SPLIT_WIDTH);
                     }
                     else
                     {
-                        make.left.equalTo(lastButton.mas_right).offset(-MM_SPLIT_WIDTH);
+                        make.leading.equalTo(lastButton.mas_right).offset(-MM_SPLIT_WIDTH);
                         make.width.equalTo(firstButton);
                     }
                 }
                 else
                 {
-                    make.left.right.equalTo(self.buttonView);
+                    make.leading.trailing.equalTo(self.buttonView);
                     make.height.mas_equalTo(config.buttonHeight);
                     
                     if ( !firstButton )
@@ -215,7 +215,7 @@
             
             if ( items.count <= 2 )
             {
-                make.right.equalTo(self.buttonView.mas_right).offset(MM_SPLIT_WIDTH);
+                make.trailing.equalTo(self.buttonView.mas_right).offset(MM_SPLIT_WIDTH);
             }
             else
             {

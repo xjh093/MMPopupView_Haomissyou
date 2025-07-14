@@ -42,7 +42,7 @@
         [self addSubview:self.btnCancel];
         [self.btnCancel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(80, 50));
-            make.left.top.equalTo(self);
+            make.leading.top.equalTo(self);
         }];
         [self.btnCancel setTitle:@"Cancel" forState:UIControlStateNormal];
         [self.btnCancel setTitleColor:MMHexColor(0xE76153FF) forState:UIControlStateNormal];
@@ -52,7 +52,7 @@
         [self addSubview:self.btnConfirm];
         [self.btnConfirm mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(80, 50));
-            make.right.top.equalTo(self);
+            make.trailing.top.equalTo(self);
         }];
         [self.btnConfirm setTitle:@"Confirm" forState:UIControlStateNormal];
         [self.btnConfirm setTitleColor:MMHexColor(0xE76153FF) forState:UIControlStateNormal];

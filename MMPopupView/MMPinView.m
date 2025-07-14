@@ -65,7 +65,7 @@
         self.btnClose = [UIButton mm_buttonWithTarget:self action:@selector(actionClose)];
         [self.backView addSubview:self.btnClose];
         [self.btnClose mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.right.equalTo(self.backView).insets(UIEdgeInsetsMake(0, 0, 0, 5));
+            make.top.trailing.equalTo(self.backView).insets(UIEdgeInsetsMake(0, 0, 0, 5));
             make.size.mas_equalTo(CGSizeMake(40, 40));
         }];
         [self.btnClose setTitle:@"Close" forState:UIControlStateNormal];
@@ -75,7 +75,7 @@
         self.lblStatus = [UILabel new];
         [self.backView addSubview:self.lblStatus];
         [self.lblStatus mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.top.right.equalTo(self.backView).insets(UIEdgeInsetsMake(0, 19, 0, 19));
+            make.leading.top.trailing.equalTo(self.backView).insets(UIEdgeInsetsMake(0, 19, 0, 19));
             make.height.equalTo(@50);
         }];
         self.lblStatus.textColor = MMHexColor(0x333333FF);
@@ -86,7 +86,7 @@
         UIView *split = [UIView new];
         [self.backView addSubview:split];
         [split mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.backView);
+            make.leading.trailing.equalTo(self.backView);
             make.bottom.equalTo(self.lblStatus.mas_bottom);
             make.height.mas_equalTo(MM_SPLIT_WIDTH);
         }];
@@ -94,7 +94,7 @@
         self.lblPhone = [UILabel new];
         [self.backView addSubview:self.lblPhone];
         [self.lblPhone mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.backView).insets(UIEdgeInsetsMake(0, 19, 0, 19));
+            make.leading.trailing.equalTo(self.backView).insets(UIEdgeInsetsMake(0, 19, 0, 19));
             make.top.equalTo(self.lblStatus.mas_bottom).offset(10);
         }];
         self.lblPhone.numberOfLines = 0;
@@ -108,7 +108,7 @@
         self.btnCountDown = [UIButton mm_buttonWithTarget:self action:@selector(actionResend)];
         [self.backView addSubview:self.btnCountDown];
         [self.btnCountDown mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.backView).insets(UIEdgeInsetsMake(0, 19, 0, 19));
+            make.leading.trailing.equalTo(self.backView).insets(UIEdgeInsetsMake(0, 19, 0, 19));
             make.bottom.equalTo(self.backView.mas_bottom).offset(-20);
         }];
         self.btnCountDown.titleLabel.textAlignment = NSTextAlignmentCenter;
