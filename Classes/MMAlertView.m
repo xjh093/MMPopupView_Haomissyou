@@ -176,11 +176,11 @@
                     if ( !firstButton )
                     {
                         firstButton = btn;
-                        make.leading.equalTo(self.buttonView.mas_left).offset(-MM_SPLIT_WIDTH);
+                        make.leading.equalTo(self.buttonView.mas_leading).offset(-MM_SPLIT_WIDTH);
                     }
                     else
                     {
-                        make.leading.equalTo(lastButton.mas_right).offset(-MM_SPLIT_WIDTH);
+                        make.leading.equalTo(lastButton.mas_trailing).offset(-MM_SPLIT_WIDTH);
                         make.width.equalTo(firstButton);
                     }
                 }
@@ -215,7 +215,7 @@
             
             if ( items.count <= 2 )
             {
-                make.trailing.equalTo(self.buttonView.mas_right).offset(MM_SPLIT_WIDTH);
+                make.trailing.equalTo(self.buttonView.mas_trailing).offset(MM_SPLIT_WIDTH);
             }
             else
             {
